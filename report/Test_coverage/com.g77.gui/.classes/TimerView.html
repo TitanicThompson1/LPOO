@@ -1,0 +1,109 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: TimerView</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g77.gui</a> ]
+</div>
+
+<h1>Coverage Summary for Class: TimerView (com.g77.gui)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">TimerView</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (11/ 11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g77.gui;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.g77.data.objects.Timer;
+<i>4</i>&nbsp;import com.googlecode.lanterna.TextColor;
+<i>5</i>&nbsp;import com.googlecode.lanterna.graphics.TextGraphics;
+<i>6</i>&nbsp;import com.googlecode.lanterna.screen.TerminalScreen;
+<b class="fc"><i>7</i>&nbsp;public class TimerView {</b>
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;    public void draw(TerminalScreen screen, Timer timer) {
+<b class="fc"><i>11</i>&nbsp;        if(!timer.isVisible()) return;</b>
+<i>12</i>&nbsp;
+<b class="fc"><i>13</i>&nbsp;        TextGraphics graphics = screen.newTextGraphics();</b>
+<b class="fc"><i>14</i>&nbsp;        graphics.setBackgroundColor(TextColor.Factory.fromString(&quot;#A0A0A0&quot;));</b>
+<b class="fc"><i>15</i>&nbsp;        graphics.setForegroundColor(TextColor.Factory.fromString(&quot;#0F0F0F&quot;));</b>
+<i>16</i>&nbsp;
+<b class="fc"><i>17</i>&nbsp;        if(timer.getSeconds() &lt; 10)</b>
+<b class="fc"><i>18</i>&nbsp;            graphics.putString(timer.getPosition().getX(), timer.getPosition().getY(), Integer.toString(timer.getMinutes())</b>
+<b class="fc"><i>19</i>&nbsp;                    + &quot;:&quot; + &quot;0&quot; +Integer.toString(timer.getSeconds()));</b>
+<i>20</i>&nbsp;        else
+<b class="fc"><i>21</i>&nbsp;            graphics.putString(timer.getPosition().getX(), timer.getPosition().getY(), Integer.toString(timer.getMinutes())</b>
+<b class="fc"><i>22</i>&nbsp;                    + &quot;:&quot; + Integer.toString(timer.getSeconds()));</b>
+<i>23</i>&nbsp;
+<i>24</i>&nbsp;
+<b class="fc"><i>25</i>&nbsp;    }</b>
+<i>26</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 22:35</div>
+</div>
+</body>
+</html>

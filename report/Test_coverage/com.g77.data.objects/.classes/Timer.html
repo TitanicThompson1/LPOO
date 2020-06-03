@@ -1,0 +1,191 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Timer</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g77.data.objects</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Timer (com.g77.data.objects)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Timer</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (10/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    92%
+  </span>
+  <span class="absValue">
+    (23/ 25)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Timer$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    75%
+  </span>
+  <span class="absValue">
+    (9/ 12)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (12/ 12)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    86,5%
+  </span>
+  <span class="absValue">
+    (32/ 37)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g77.data.objects;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.g77.data.GameModel;
+<i>4</i>&nbsp;import com.g77.data.stats.Position;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;
+<b class="fc"><i>7</i>&nbsp;public class Timer extends Object{</b>
+<i>8</i>&nbsp;    private int minutes, seconds;
+<i>9</i>&nbsp;    private boolean visible;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    public Timer(Position position, int minutes, int seconds) {
+<b class="fc"><i>12</i>&nbsp;        super(position);</b>
+<b class="fc"><i>13</i>&nbsp;        this.minutes = minutes;</b>
+<b class="fc"><i>14</i>&nbsp;        this.seconds = seconds;</b>
+<b class="fc"><i>15</i>&nbsp;        this.visible = false;</b>
+<b class="fc"><i>16</i>&nbsp;    }</b>
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    public boolean isVisible() {
+<b class="fc"><i>19</i>&nbsp;        return visible;</b>
+<i>20</i>&nbsp;    }
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    public int getMinutes() {
+<b class="fc"><i>23</i>&nbsp;        return minutes;</b>
+<i>24</i>&nbsp;    }
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    public int getSeconds() {
+<b class="fc"><i>27</i>&nbsp;        return seconds;</b>
+<i>28</i>&nbsp;    }
+<i>29</i>&nbsp;
+<i>30</i>&nbsp;    public void setMinutes(int minutes) {
+<b class="fc"><i>31</i>&nbsp;        this.minutes = minutes;</b>
+<b class="fc"><i>32</i>&nbsp;    }</b>
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;    public void setSeconds(int seconds) {
+<b class="fc"><i>35</i>&nbsp;        this.seconds = seconds;</b>
+<b class="fc"><i>36</i>&nbsp;    }</b>
+<i>37</i>&nbsp;
+<i>38</i>&nbsp;    public void setVisible(boolean visible) {
+<b class="fc"><i>39</i>&nbsp;        this.visible = visible;</b>
+<b class="fc"><i>40</i>&nbsp;    }</b>
+<i>41</i>&nbsp;
+<i>42</i>&nbsp;    public void start(GameModel gameModel){
+<b class="fc"><i>43</i>&nbsp;        this.visible = true;</b>
+<i>44</i>&nbsp;
+<b class="fc"><i>45</i>&nbsp;        new Thread(new Runnable() {</b>
+<i>46</i>&nbsp;            @Override
+<i>47</i>&nbsp;            public void run() {
+<i>48</i>&nbsp;                while (true) {
+<i>49</i>&nbsp;                    try {
+<b class="fc"><i>50</i>&nbsp;                        Thread.sleep(1000);</b>
+<b class="nc"><i>51</i>&nbsp;                    } catch (InterruptedException e) {</b>
+<b class="nc"><i>52</i>&nbsp;                        e.printStackTrace();</b>
+<b class="nc"><i>53</i>&nbsp;                        break;</b>
+<b class="fc"><i>54</i>&nbsp;                    }</b>
+<i>55</i>&nbsp;
+<b class="fc"><i>56</i>&nbsp;                    if(decreaseTime()) {</b>
+<b class="fc"><i>57</i>&nbsp;                        gameModel.setGameOver(true);</b>
+<b class="fc"><i>58</i>&nbsp;                        break;</b>
+<i>59</i>&nbsp;                    }
+<i>60</i>&nbsp;
+<b class="fc"><i>61</i>&nbsp;                    gameModel.notifyObservers(gameModel);</b>
+<i>62</i>&nbsp;
+<b class="fc"><i>63</i>&nbsp;                    if(gameModel.isGameOver()) break;</b>
+<i>64</i>&nbsp;                }
+<b class="fc"><i>65</i>&nbsp;            }</b>
+<b class="fc"><i>66</i>&nbsp;        }).start();</b>
+<i>67</i>&nbsp;
+<b class="fc"><i>68</i>&nbsp;    }</b>
+<i>69</i>&nbsp;
+<i>70</i>&nbsp;    private boolean decreaseTime() {
+<b class="fc"><i>71</i>&nbsp;        if(seconds - 1 &lt; 0){</b>
+<b class="fc"><i>72</i>&nbsp;            if(minutes == 0) return true;</b>
+<b class="nc"><i>73</i>&nbsp;            seconds = 59;</b>
+<b class="nc"><i>74</i>&nbsp;            minutes--;</b>
+<i>75</i>&nbsp;        }else{
+<b class="fc"><i>76</i>&nbsp;            seconds--;</b>
+<i>77</i>&nbsp;        }
+<b class="fc"><i>78</i>&nbsp;        return false;</b>
+<i>79</i>&nbsp;    }
+<i>80</i>&nbsp;
+<i>81</i>&nbsp;
+<i>82</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 22:35</div>
+</div>
+</body>
+</html>

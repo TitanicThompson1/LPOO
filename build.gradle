@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'info.solidsoft.pitest' version '1.4.6'
+}
+
+application {
+    mainClassName = 'com.g77.Game'
+}
+
+pitest{
+    targetClasses = ['com.g77.data.*', 'com.g77.gui.*', 'com.g77.logic.*', 'com.g77.observer.*']
+}
+
+
+group 'com.g77'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'com.googlecode.lanterna', name: 'lanterna', version: '3.0.1'
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '2.25.0'
+
+}

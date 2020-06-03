@@ -1,0 +1,222 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: MainCharacter</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g77.data.objects</a> ]
+</div>
+
+<h1>Coverage Summary for Class: MainCharacter (com.g77.data.objects)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">MainCharacter</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/ 14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (26/ 26)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$1NnR65g4</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$2aIAPm9f</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$3PIPk48i</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$4MT9iQ5I</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$6BAIBV9J</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$6unUMg5w</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$89mmMJW2</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$9haZkAJO</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$BZiOBJj7</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$HjaReTlE</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$k3KX8qm2</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$levSeIVh</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$NeEw1tvY</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$P93vjUt8</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$poHjf1Pi</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$s21ySwqr</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$t0WBmWWM</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$v7CLEmNl</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$vpwegUVK</td>
+  </tr>
+  <tr>
+    <td class="name">MainCharacter$MockitoMock$1755182938$auxiliary$yvrDuZTp</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (14/ 14)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (26/ 26)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g77.data.objects;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.g77.data.stats.Life;
+<i>4</i>&nbsp;import com.g77.data.stats.Position;
+<i>5</i>&nbsp;import com.g77.gui.Move;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.util.ArrayList;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;public class MainCharacter extends Movable {
+<i>10</i>&nbsp;    private Life life;
+<i>11</i>&nbsp;    private Move lastMovement;
+<i>12</i>&nbsp;    Key key;
+<i>13</i>&nbsp;    private boolean canAttack, wasAttacked;
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    public MainCharacter(Position position) {
+<b class="fc"><i>16</i>&nbsp;        super(position);</b>
+<b class="fc"><i>17</i>&nbsp;        life = new Life();</b>
+<b class="fc"><i>18</i>&nbsp;        this.canAttack = false;</b>
+<b class="fc"><i>19</i>&nbsp;    }</b>
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    public Life getLife() {
+<b class="fc"><i>22</i>&nbsp;        return life;</b>
+<i>23</i>&nbsp;    }
+<i>24</i>&nbsp;    public boolean isDead() {
+<b class="fc"><i>25</i>&nbsp;        return life.isDead();</b>
+<i>26</i>&nbsp;    }
+<i>27</i>&nbsp;
+<i>28</i>&nbsp;    public boolean isWasAttacked() {
+<b class="fc"><i>29</i>&nbsp;        return wasAttacked;</b>
+<i>30</i>&nbsp;    }
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    public void setLife(Life life) {
+<b class="fc"><i>33</i>&nbsp;        this.life = life;</b>
+<b class="fc"><i>34</i>&nbsp;    }</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    public void setWasAttacked(boolean wasAttacked) {
+<b class="fc"><i>37</i>&nbsp;        this.wasAttacked = wasAttacked;</b>
+<b class="fc"><i>38</i>&nbsp;    }</b>
+<i>39</i>&nbsp;
+<i>40</i>&nbsp;    public Move getLastMovement() {
+<b class="fc"><i>41</i>&nbsp;        return lastMovement;</b>
+<i>42</i>&nbsp;    }
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    public void setLastMovement(Move lastMovement) {
+<b class="fc"><i>45</i>&nbsp;        this.lastMovement = lastMovement;</b>
+<b class="fc"><i>46</i>&nbsp;    }</b>
+<i>47</i>&nbsp;
+<b class="fc"><i>48</i>&nbsp;    public void canNowAttack(){this.canAttack = true;}</b>
+<i>49</i>&nbsp;
+<b class="fc"><i>50</i>&nbsp;    public boolean isCanAttack(){return this.canAttack;}</b>
+<i>51</i>&nbsp;
+<b class="fc"><i>52</i>&nbsp;    public void setKey(Key key){this.key = key;}</b>
+<i>53</i>&nbsp;
+<i>54</i>&nbsp;    public Key getKey() {
+<b class="fc"><i>55</i>&nbsp;        return key;</b>
+<i>56</i>&nbsp;    }
+<i>57</i>&nbsp;
+<b class="fc"><i>58</i>&nbsp;    public boolean hasKey(){ return this.key != null;}</b>
+<i>59</i>&nbsp;
+<i>60</i>&nbsp;    public void updateMC(MainCharacter mainCharacter){
+<b class="fc"><i>61</i>&nbsp;        this.life = mainCharacter.life;</b>
+<b class="fc"><i>62</i>&nbsp;        this.lastMovement = mainCharacter.lastMovement;</b>
+<b class="fc"><i>63</i>&nbsp;        this.key = mainCharacter.key;</b>
+<b class="fc"><i>64</i>&nbsp;        this.canAttack = mainCharacter.canAttack;</b>
+<b class="fc"><i>65</i>&nbsp;        this.wasAttacked = mainCharacter.wasAttacked;</b>
+<b class="fc"><i>66</i>&nbsp;        this.position = mainCharacter.position;</b>
+<b class="fc"><i>67</i>&nbsp;    }</b>
+<i>68</i>&nbsp;
+<i>69</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 22:35</div>
+</div>
+</body>
+</html>

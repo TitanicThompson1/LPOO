@@ -1,0 +1,159 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Life</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g77.data.stats</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Life (com.g77.data.stats)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Life</td>
+<td class="coverageStat">
+  <span class="percent">
+    88,9%
+  </span>
+  <span class="absValue">
+    (8/ 9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95%
+  </span>
+  <span class="absValue">
+    (19/ 20)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Life$MockitoMock$699658487</td>
+  </tr>
+  <tr>
+    <td class="name">Life$MockitoMock$699658487$auxiliary$2AQoYTXl</td>
+  </tr>
+  <tr>
+    <td class="name">Life$MockitoMock$699658487$auxiliary$LFadTMtF</td>
+  </tr>
+  <tr>
+    <td class="name">Life$MockitoMock$699658487$auxiliary$sXAok0b6</td>
+  </tr>
+  <tr>
+    <td class="name">Life$MockitoMock$699658487$auxiliary$t6J5cU0W</td>
+  </tr>
+  <tr>
+    <td class="name">Life$MockitoMock$699658487$auxiliary$XUrbj30v</td>
+  </tr>
+  <tr>
+    <td class="name">Life$MockitoMock$699658487$auxiliary$Zoan6Lhz</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    88,9%
+  </span>
+  <span class="absValue">
+    (8/ 9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    95%
+  </span>
+  <span class="absValue">
+    (19/ 20)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g77.data.stats;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.Objects;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;public class Life {
+<i>6</i>&nbsp;    private static final int MAX_HEARTS = 3;
+<i>7</i>&nbsp;    private int heartQuantity;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;
+<b class="fc"><i>10</i>&nbsp;    public Life() {</b>
+<b class="fc"><i>11</i>&nbsp;        this.heartQuantity = 3;</b>
+<b class="fc"><i>12</i>&nbsp;    }</b>
+<b class="fc"><i>13</i>&nbsp;    public Life(int lives){</b>
+<b class="fc"><i>14</i>&nbsp;        this.heartQuantity = lives;</b>
+<b class="fc"><i>15</i>&nbsp;    }</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;
+<i>18</i>&nbsp;    public int getHeartQuantity() {
+<b class="fc"><i>19</i>&nbsp;        return heartQuantity;</b>
+<i>20</i>&nbsp;    }
+<i>21</i>&nbsp;
+<i>22</i>&nbsp;    public void increaseLife() {
+<b class="fc"><i>23</i>&nbsp;        if(!isFullLife())</b>
+<b class="fc"><i>24</i>&nbsp;            heartQuantity++;</b>
+<b class="fc"><i>25</i>&nbsp;    }</b>
+<i>26</i>&nbsp;
+<i>27</i>&nbsp;    public void decreaseLife() {
+<b class="fc"><i>28</i>&nbsp;        if(!isDead())</b>
+<b class="fc"><i>29</i>&nbsp;            heartQuantity--;</b>
+<b class="fc"><i>30</i>&nbsp;    }</b>
+<i>31</i>&nbsp;
+<b class="fc"><i>32</i>&nbsp;    public boolean isDead() { return heartQuantity == 0;}</b>
+<i>33</i>&nbsp;
+<b class="fc"><i>34</i>&nbsp;    private boolean isFullLife() {return heartQuantity == MAX_HEARTS;}</b>
+<i>35</i>&nbsp;
+<i>36</i>&nbsp;    @Override
+<i>37</i>&nbsp;    public boolean equals(Object o) {
+<b class="fc"><i>38</i>&nbsp;        if (this == o) return true;</b>
+<b class="fc"><i>39</i>&nbsp;        if (o == null || getClass() != o.getClass()) return false;</b>
+<b class="fc"><i>40</i>&nbsp;        Life life = (Life) o;</b>
+<b class="fc"><i>41</i>&nbsp;        return heartQuantity == life.heartQuantity;</b>
+<i>42</i>&nbsp;    }
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;    @Override
+<i>45</i>&nbsp;    public int hashCode() {
+<b class="nc"><i>46</i>&nbsp;        return Objects.hash(heartQuantity);</b>
+<i>47</i>&nbsp;    }
+<i>48</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 22:35</div>
+</div>
+</body>
+</html>

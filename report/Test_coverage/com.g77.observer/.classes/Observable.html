@@ -1,0 +1,102 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Observable</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g77.observer</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Observable (com.g77.observer)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Observable</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (3/ 3)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g77.observer;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import java.util.ArrayList;
+<i>4</i>&nbsp;import java.util.List;
+<i>5</i>&nbsp;
+<i>6</i>&nbsp;public abstract class Observable&lt;T&gt; {
+<b class="fc"><i>7</i>&nbsp;    private List&lt;Observer&lt;T&gt;&gt; observers = new ArrayList&lt;&gt;();</b>
+<i>8</i>&nbsp;
+<b class="fc"><i>9</i>&nbsp;    public Observable(){};</b>
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;    public void addObserver(Observer&lt;T&gt; observer) { this.observers.add(observer); }</b>
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    /*public void removeObserver(Observer&lt;T&gt; com.g77.observer) { this.observers.remove(com.g77.observer);}*/
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    public void notifyObservers(T subject){
+<b class="fc"><i>16</i>&nbsp;        for (Observer&lt;T&gt; o : observers)</b>
+<b class="fc"><i>17</i>&nbsp;            o.changed(subject);</b>
+<b class="fc"><i>18</i>&nbsp;    }</b>
+<i>19</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 22:35</div>
+</div>
+</body>
+</html>

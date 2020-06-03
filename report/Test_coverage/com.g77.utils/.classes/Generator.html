@@ -1,0 +1,823 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Generator</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g77.utils</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Generator (com.g77.utils)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Generator</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 45)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 358)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g77.utils;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.g77.data.levels.Floor;
+<i>4</i>&nbsp;import com.g77.data.levels.Room;
+<i>5</i>&nbsp;import com.g77.data.menu.Button;
+<i>6</i>&nbsp;import com.g77.data.menu.Menu;
+<i>7</i>&nbsp;import com.g77.data.menu.TextBox;
+<i>8</i>&nbsp;import com.g77.data.objects.*;
+<i>9</i>&nbsp;import com.g77.data.stats.Position;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;
+<i>12</i>&nbsp;import java.util.ArrayList;
+<i>13</i>&nbsp;import java.util.List;
+<i>14</i>&nbsp;
+<b class="nc"><i>15</i>&nbsp;public class Generator {</b>
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    public void generateGame(List&lt;Floor&gt; floors)
+<i>18</i>&nbsp;    {
+<i>19</i>&nbsp;
+<b class="nc"><i>20</i>&nbsp;        Door finalDoor = new Door(new Position(30,0), new Position(30,0) ,2,-1, true);</b>
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;        floors.add(generateFloor0(new Position(55,25),finalDoor));</b>
+<b class="nc"><i>23</i>&nbsp;        floors.add(generateFloor1(new Position(2,10)));</b>
+<b class="nc"><i>24</i>&nbsp;        floors.add(generateFloor2(new Position(50,7)));</b>
+<b class="nc"><i>25</i>&nbsp;        floors.add(generateFloor3(new Position(30,27)));</b>
+<b class="nc"><i>26</i>&nbsp;        floors.add(generateFloor4(new Position(30,15),finalDoor));</b>
+<b class="nc"><i>27</i>&nbsp;    }</b>
+<i>28</i>&nbsp;
+<i>29</i>&nbsp;    public Floor generateFloor0(Position mainCharacter, Door finalDoor)
+<i>30</i>&nbsp;    {
+<b class="nc"><i>31</i>&nbsp;        List&lt;Room&gt; rooms = new ArrayList&lt;&gt;();</b>
+<i>32</i>&nbsp;
+<i>33</i>&nbsp;
+<i>34</i>&nbsp;
+<b class="nc"><i>35</i>&nbsp;        rooms.add(generateRoom0(0,20,7, new Position(40,23)));  // Quarto - Starting room</b>
+<b class="nc"><i>36</i>&nbsp;        rooms.add(generateRoom1(1,20,7,  new Position(0,0)));    // WC</b>
+<b class="nc"><i>37</i>&nbsp;        rooms.add(generateRoom2(2,20,30, new Position(20,0),finalDoor));   // Corredor central</b>
+<b class="nc"><i>38</i>&nbsp;        rooms.add(generateRoom3(3,20,23, new Position(40,0)));   // Secret Room</b>
+<b class="nc"><i>39</i>&nbsp;        rooms.add(generateRoom4(4,20,10, new Position(0,20)));   // Dining Room</b>
+<b class="nc"><i>40</i>&nbsp;        rooms.add(generateRoom5(5,10,7,  new Position(0,7)));    // Stairs</b>
+<b class="nc"><i>41</i>&nbsp;        rooms.add(generateRoom6(6,10,6,  new Position(0,14)));   // kitchen</b>
+<b class="nc"><i>42</i>&nbsp;        rooms.add(generateRoom7(7,10,13,  new Position(10,7)));  // living room</b>
+<i>43</i>&nbsp;
+<i>44</i>&nbsp;
+<b class="nc"><i>45</i>&nbsp;        return new Floor(rooms, mainCharacter);</b>
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;
+<i>48</i>&nbsp;    public Floor generateFloor1(Position mainCharacter)
+<i>49</i>&nbsp;    {
+<b class="nc"><i>50</i>&nbsp;        List&lt;Room&gt; rooms = new ArrayList&lt;&gt;();</b>
+<i>51</i>&nbsp;
+<b class="nc"><i>52</i>&nbsp;        rooms.add(generateRoom10(0,20,13, new Position(0,0)));       // Stairs</b>
+<b class="nc"><i>53</i>&nbsp;        rooms.add(generateRoom11(1,20,13,  new Position(20,0)));     // Monster Block</b>
+<b class="nc"><i>54</i>&nbsp;        rooms.add(generateRoom12(2,30,10, new Position(0,13)));      // Corredor central</b>
+<b class="nc"><i>55</i>&nbsp;        rooms.add(generateRoom13(3,20,7, new Position(0,23)));       // Canto Inferior Esquerdo</b>
+<b class="nc"><i>56</i>&nbsp;        rooms.add(generateRoom14(4,20,7, new Position(20,23)));      // Corredor</b>
+<b class="nc"><i>57</i>&nbsp;        rooms.add(generateRoom15(5,20,7,  new Position(40,23)));     // Sword Room</b>
+<b class="nc"><i>58</i>&nbsp;        rooms.add(generateRoom16(6,20,13,  new Position(40,0)));     // Stairs</b>
+<b class="nc"><i>59</i>&nbsp;        rooms.add(generateRoom17(7,10,10,  new Position(30,13)));    // Monster</b>
+<b class="nc"><i>60</i>&nbsp;        rooms.add(generateRoom18(8,20,10,  new Position(40,13)));    // Ester Egg</b>
+<i>61</i>&nbsp;
+<b class="nc"><i>62</i>&nbsp;        return new Floor(rooms, mainCharacter);</b>
+<i>63</i>&nbsp;    }
+<i>64</i>&nbsp;
+<i>65</i>&nbsp;    public Floor generateFloor2(Position mainCharacter)
+<i>66</i>&nbsp;    {
+<b class="nc"><i>67</i>&nbsp;        List&lt;Room&gt; rooms = new ArrayList&lt;&gt;();</b>
+<i>68</i>&nbsp;
+<b class="nc"><i>69</i>&nbsp;        rooms.add(generateRoom20(0,20,13, new Position(40,0)));       // Stairs</b>
+<b class="nc"><i>70</i>&nbsp;        rooms.add(generateRoom21(1,40,13, new Position(0,0)));</b>
+<b class="nc"><i>71</i>&nbsp;        rooms.add(generateRoom22(2,40,7, new Position(0,13)));</b>
+<b class="nc"><i>72</i>&nbsp;        rooms.add(generateRoom23(3,40,5, new Position(0,20)));</b>
+<b class="nc"><i>73</i>&nbsp;        rooms.add(generateRoom24(4,40,5, new Position(0,25)));</b>
+<b class="nc"><i>74</i>&nbsp;        rooms.add(generateRoom25(5,20,17, new Position(40,13)));</b>
+<i>75</i>&nbsp;
+<b class="nc"><i>76</i>&nbsp;        return new Floor(rooms, mainCharacter);</b>
+<i>77</i>&nbsp;    }
+<i>78</i>&nbsp;
+<i>79</i>&nbsp;    public Floor generateFloor3(Position mainCharacter)
+<i>80</i>&nbsp;    {
+<b class="nc"><i>81</i>&nbsp;        List&lt;Room&gt; rooms = new ArrayList&lt;&gt;();</b>
+<i>82</i>&nbsp;
+<b class="nc"><i>83</i>&nbsp;        rooms.add(generateRoom30(0,20,10, new Position(20,20)));        // Stairs</b>
+<b class="nc"><i>84</i>&nbsp;        rooms.add(generateRoom31(1,20,10, new Position(0,20)));         // Canto inferior esquerdo</b>
+<b class="nc"><i>85</i>&nbsp;        rooms.add(generateRoom32(2,20,20, new Position(0,0)));          // Canto superior esquerdo</b>
+<b class="nc"><i>86</i>&nbsp;        rooms.add(generateRoom33(3,20,7, new Position(20,0)));          // Topo central</b>
+<b class="nc"><i>87</i>&nbsp;        rooms.add(generateRoom34(4,20,13, new Position(20,7)));         // Stairs</b>
+<b class="nc"><i>88</i>&nbsp;        rooms.add(generateRoom35(5,20,20, new Position(40,0)));         // Canto superior direito</b>
+<b class="nc"><i>89</i>&nbsp;        rooms.add(generateRoom36(6,20,10, new Position(40,20)));        // Canto inferior direito</b>
+<i>90</i>&nbsp;
+<b class="nc"><i>91</i>&nbsp;        return new Floor(rooms, mainCharacter);</b>
+<i>92</i>&nbsp;    }
+<i>93</i>&nbsp;
+<i>94</i>&nbsp;    public Floor generateFloor4(Position mainCharacter, Door finalDoor)
+<i>95</i>&nbsp;    {
+<b class="nc"><i>96</i>&nbsp;        List&lt;Room&gt; rooms = new ArrayList&lt;&gt;();</b>
+<i>97</i>&nbsp;
+<b class="nc"><i>98</i>&nbsp;        rooms.add(generateRoom40(0,20,10, new Position(20,10)));                  // Stairs</b>
+<b class="nc"><i>99</i>&nbsp;        rooms.add(generateRoom41(1,60,30, new Position(0,0),finalDoor));          // Last floor</b>
+<i>100</i>&nbsp;
+<b class="nc"><i>101</i>&nbsp;        return new Floor(rooms, mainCharacter);</b>
+<i>102</i>&nbsp;    }
+<i>103</i>&nbsp;
+<i>104</i>&nbsp;
+<i>105</i>&nbsp;//----------------------------------------------------------------------------------------------------------------------
+<i>106</i>&nbsp;
+<i>107</i>&nbsp;    public Room generateRoom0(int id, int width, int height, Position position)  // Quarto - Starting room
+<i>108</i>&nbsp;    {
+<b class="nc"><i>109</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>110</i>&nbsp;
+<i>111</i>&nbsp;
+<i>112</i>&nbsp;
+<b class="nc"><i>113</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>114</i>&nbsp;        Door door = new Door(new Position(40,25),new Position(38,25),id,2, false);</b>
+<b class="nc"><i>115</i>&nbsp;        doors.add(door);</b>
+<b class="nc"><i>116</i>&nbsp;        room.setDoors(doors);</b>
+<i>117</i>&nbsp;
+<b class="nc"><i>118</i>&nbsp;        room.setVisible(true);</b>
+<b class="nc"><i>119</i>&nbsp;        return room;</b>
+<i>120</i>&nbsp;    }
+<i>121</i>&nbsp;
+<i>122</i>&nbsp;    public Room generateRoom1(int id, int width, int height, Position position)  // WC
+<i>123</i>&nbsp;    {
+<b class="nc"><i>124</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>125</i>&nbsp;
+<b class="nc"><i>126</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>127</i>&nbsp;        doors.add(new Door(new Position(15,6), new Position(15,8) ,id,7, false));</b>
+<b class="nc"><i>128</i>&nbsp;        room.setDoors(doors);</b>
+<i>129</i>&nbsp;
+<b class="nc"><i>130</i>&nbsp;        List&lt;Item&gt; items = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>131</i>&nbsp;        items.add(new ExtraLife(new Position(3,3)));</b>
+<b class="nc"><i>132</i>&nbsp;        room.setItems(items);</b>
+<i>133</i>&nbsp;
+<b class="nc"><i>134</i>&nbsp;        return room;</b>
+<i>135</i>&nbsp;    }
+<i>136</i>&nbsp;
+<i>137</i>&nbsp;    public Room generateRoom2(int id,int width, int height, Position position, Door door)   // Corredor central
+<i>138</i>&nbsp;    {
+<b class="nc"><i>139</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>140</i>&nbsp;
+<i>141</i>&nbsp;
+<b class="nc"><i>142</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<i>143</i>&nbsp;
+<b class="nc"><i>144</i>&nbsp;        doors.add(new Door(new Position(39,25), new Position(41,25) ,id,0, false));</b>
+<b class="nc"><i>145</i>&nbsp;        doors.add(new Door(new Position(20,17), new Position(18,17) ,id,7, false));</b>
+<i>146</i>&nbsp;
+<b class="nc"><i>147</i>&nbsp;        doors.add(door);</b>
+<i>148</i>&nbsp;
+<b class="nc"><i>149</i>&nbsp;        room.setDoors(doors);</b>
+<b class="nc"><i>150</i>&nbsp;        return room;</b>
+<i>151</i>&nbsp;    }
+<i>152</i>&nbsp;
+<i>153</i>&nbsp;    public Room generateRoom3(int id, int width, int height, Position position)  // Secret Room
+<i>154</i>&nbsp;    {
+<b class="nc"><i>155</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>156</i>&nbsp;
+<b class="nc"><i>157</i>&nbsp;        Door door = new Door(new Position(50,0), new Position(50,0) ,3,-1, true);</b>
+<i>158</i>&nbsp;
+<b class="nc"><i>159</i>&nbsp;        List&lt;Item&gt; items = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>160</i>&nbsp;        items.add(new Key(new Position(50,10), door));</b>
+<b class="nc"><i>161</i>&nbsp;        room.setItems(items);</b>
+<i>162</i>&nbsp;
+<b class="nc"><i>163</i>&nbsp;        room.addDoor(door);</b>
+<b class="nc"><i>164</i>&nbsp;        return room;</b>
+<i>165</i>&nbsp;    }
+<i>166</i>&nbsp;
+<i>167</i>&nbsp;    public Room generateRoom4(int id, int width, int height, Position position)  // Dining Room
+<i>168</i>&nbsp;    {
+<b class="nc"><i>169</i>&nbsp;        Room room = new Room(id, width, height, position);</b>
+<i>170</i>&nbsp;
+<i>171</i>&nbsp;
+<i>172</i>&nbsp;
+<b class="nc"><i>173</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>174</i>&nbsp;        doors.add(new Door(new Position(15,20), new Position(15,18) ,id,7, false));</b>
+<b class="nc"><i>175</i>&nbsp;        doors.add(new Door(new Position(3,20), new Position(3,18) ,id,6, false));</b>
+<i>176</i>&nbsp;
+<b class="nc"><i>177</i>&nbsp;        room.setDoors(doors);</b>
+<i>178</i>&nbsp;
+<b class="nc"><i>179</i>&nbsp;        return room;</b>
+<i>180</i>&nbsp;    }
+<i>181</i>&nbsp;
+<i>182</i>&nbsp;    public Room generateRoom5(int id, int width, int height, Position position)  // Stairs
+<i>183</i>&nbsp;    {
+<b class="nc"><i>184</i>&nbsp;        Room room = new Room(id, width, height, position);</b>
+<i>185</i>&nbsp;
+<b class="nc"><i>186</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>187</i>&nbsp;        doors.add(new Door(new Position(9,10), new Position(11,10) ,id,7, false));</b>
+<i>188</i>&nbsp;
+<b class="nc"><i>189</i>&nbsp;        room.setDoors(doors);</b>
+<i>190</i>&nbsp;
+<i>191</i>&nbsp;
+<b class="nc"><i>192</i>&nbsp;        List&lt;Stair&gt; stairs = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>193</i>&nbsp;        Stair stair = new Stair(new Position(2,10), 0,1);</b>
+<b class="nc"><i>194</i>&nbsp;        stairs.add(stair);</b>
+<b class="nc"><i>195</i>&nbsp;        room.setStairs(stairs);</b>
+<i>196</i>&nbsp;
+<b class="nc"><i>197</i>&nbsp;        return room;</b>
+<i>198</i>&nbsp;    }
+<i>199</i>&nbsp;
+<i>200</i>&nbsp;    public Room generateRoom6(int id, int width, int height, Position position)  // kitchen
+<i>201</i>&nbsp;    {
+<b class="nc"><i>202</i>&nbsp;        Room room = new Room(id, width, height, position);</b>
+<i>203</i>&nbsp;
+<b class="nc"><i>204</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>205</i>&nbsp;        doors.add(new Door(new Position(3,19), new Position(3,21) ,id,4, false));</b>
+<i>206</i>&nbsp;
+<b class="nc"><i>207</i>&nbsp;        room.setDoors(doors);</b>
+<i>208</i>&nbsp;
+<b class="nc"><i>209</i>&nbsp;        return room;</b>
+<i>210</i>&nbsp;    }
+<i>211</i>&nbsp;
+<i>212</i>&nbsp;    public Room generateRoom7(int id, int width, int height, Position position)  // living room
+<i>213</i>&nbsp;    {
+<b class="nc"><i>214</i>&nbsp;        Room room = new Room(id, width, height, position);</b>
+<i>215</i>&nbsp;
+<b class="nc"><i>216</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<i>217</i>&nbsp;
+<b class="nc"><i>218</i>&nbsp;        doors.add(new Door(new Position(15,7), new Position(15,5) ,id,1, false));</b>
+<b class="nc"><i>219</i>&nbsp;        doors.add(new Door(new Position(19,17), new Position(21,17) ,id,2, false));</b>
+<b class="nc"><i>220</i>&nbsp;        doors.add(new Door(new Position(15,19), new Position(15,21) ,id,4, false));</b>
+<b class="nc"><i>221</i>&nbsp;        doors.add(new Door(new Position(10,10), new Position(8,10) ,id,5, false));</b>
+<i>222</i>&nbsp;
+<b class="nc"><i>223</i>&nbsp;        room.setDoors(doors);</b>
+<i>224</i>&nbsp;
+<b class="nc"><i>225</i>&nbsp;        return room;</b>
+<i>226</i>&nbsp;    }
+<i>227</i>&nbsp;
+<i>228</i>&nbsp;//----------------------------------------------------------------------------------------------------------------------
+<i>229</i>&nbsp;
+<i>230</i>&nbsp;
+<i>231</i>&nbsp;    public Room generateRoom10(int id, int width, int height, Position position) // Stairs
+<i>232</i>&nbsp;    {
+<b class="nc"><i>233</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<b class="nc"><i>234</i>&nbsp;        room.setVisible(true);</b>
+<i>235</i>&nbsp;
+<b class="nc"><i>236</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>237</i>&nbsp;        Door door = new Door(new Position(19,10),new Position(21,10),id,1, false);</b>
+<b class="nc"><i>238</i>&nbsp;        doors.add(door);</b>
+<b class="nc"><i>239</i>&nbsp;        room.setDoors(doors);</b>
+<i>240</i>&nbsp;
+<i>241</i>&nbsp;
+<b class="nc"><i>242</i>&nbsp;        List&lt;Stair&gt; stairs = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>243</i>&nbsp;        Stair stair = new Stair(new Position(2,10), 1,0);</b>
+<b class="nc"><i>244</i>&nbsp;        stairs.add(stair);</b>
+<b class="nc"><i>245</i>&nbsp;        room.setStairs(stairs);</b>
+<i>246</i>&nbsp;
+<b class="nc"><i>247</i>&nbsp;        return room;</b>
+<i>248</i>&nbsp;    }
+<i>249</i>&nbsp;
+<i>250</i>&nbsp;    public Room generateRoom11(int id, int width, int height, Position position) // Monster Block
+<i>251</i>&nbsp;    {
+<b class="nc"><i>252</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>253</i>&nbsp;
+<b class="nc"><i>254</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>255</i>&nbsp;        doors.add(new Door(new Position(20,10), new Position(18,10) ,id,0,false));</b>
+<b class="nc"><i>256</i>&nbsp;        doors.add(new Door(new Position(25,12), new Position(25,14) ,id,2,false));</b>
+<b class="nc"><i>257</i>&nbsp;        doors.add(new Door(new Position(39,7), new Position(41,7) ,id,6,false));</b>
+<b class="nc"><i>258</i>&nbsp;        room.setDoors(doors);</b>
+<i>259</i>&nbsp;
+<i>260</i>&nbsp;
+<b class="nc"><i>261</i>&nbsp;        Monster monster = new Monster(new Position(37,7));</b>
+<b class="nc"><i>262</i>&nbsp;        room.addMonster(monster);</b>
+<i>263</i>&nbsp;
+<b class="nc"><i>264</i>&nbsp;        return room;</b>
+<i>265</i>&nbsp;    }
+<i>266</i>&nbsp;
+<i>267</i>&nbsp;    public Room generateRoom12(int id,int width, int height, Position position)  // Corredor central
+<i>268</i>&nbsp;    {
+<b class="nc"><i>269</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>270</i>&nbsp;
+<b class="nc"><i>271</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>272</i>&nbsp;        doors.add(new Door(new Position(25,13), new Position(25,11) ,id,1,false));</b>
+<b class="nc"><i>273</i>&nbsp;        doors.add(new Door(new Position(10,22), new Position(10,24) ,id,3,false));</b>
+<b class="nc"><i>274</i>&nbsp;        doors.add(new Door(new Position(29,18), new Position(31,18) ,id,7,false));</b>
+<i>275</i>&nbsp;
+<b class="nc"><i>276</i>&nbsp;        List&lt;Monster&gt; monsters = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>277</i>&nbsp;        monsters.add(new Monster(new Position(4,15)));</b>
+<b class="nc"><i>278</i>&nbsp;        monsters.add(new Monster(new Position(25,20)));</b>
+<i>279</i>&nbsp;
+<i>280</i>&nbsp;
+<b class="nc"><i>281</i>&nbsp;        room.setDoors(doors);</b>
+<b class="nc"><i>282</i>&nbsp;        room.setMonsters(monsters);</b>
+<i>283</i>&nbsp;
+<b class="nc"><i>284</i>&nbsp;        return room;</b>
+<i>285</i>&nbsp;    }
+<i>286</i>&nbsp;
+<i>287</i>&nbsp;    public Room generateRoom13(int id, int width, int height, Position position) // Canto Inferior Esquerdo
+<i>288</i>&nbsp;    {
+<b class="nc"><i>289</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>290</i>&nbsp;
+<b class="nc"><i>291</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>292</i>&nbsp;        doors.add(new Door(new Position(10,23), new Position(10,21) ,id,2,false));</b>
+<b class="nc"><i>293</i>&nbsp;        doors.add(new Door(new Position(19,26), new Position(21,26) ,id,4,false));</b>
+<i>294</i>&nbsp;
+<b class="nc"><i>295</i>&nbsp;        List&lt;Monster&gt; monsters = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>296</i>&nbsp;        monsters.add(new Monster(new Position(4,27)));</b>
+<i>297</i>&nbsp;
+<i>298</i>&nbsp;
+<b class="nc"><i>299</i>&nbsp;        room.setDoors(doors);</b>
+<b class="nc"><i>300</i>&nbsp;        room.setMonsters(monsters);</b>
+<i>301</i>&nbsp;
+<b class="nc"><i>302</i>&nbsp;        return room;</b>
+<i>303</i>&nbsp;    }
+<i>304</i>&nbsp;
+<i>305</i>&nbsp;    public Room generateRoom14(int id, int width, int height, Position position) // Corredor
+<i>306</i>&nbsp;    {
+<b class="nc"><i>307</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>308</i>&nbsp;
+<b class="nc"><i>309</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>310</i>&nbsp;        doors.add(new Door(new Position(20,26), new Position(18,26) ,id,3,false));</b>
+<b class="nc"><i>311</i>&nbsp;        doors.add(new Door(new Position(39,26), new Position(41,26) ,id,5,false));</b>
+<i>312</i>&nbsp;
+<b class="nc"><i>313</i>&nbsp;        List&lt;Monster&gt; monsters = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>314</i>&nbsp;        monsters.add(new Monster(new Position(36,25)));</b>
+<i>315</i>&nbsp;
+<i>316</i>&nbsp;
+<b class="nc"><i>317</i>&nbsp;        room.setDoors(doors);</b>
+<b class="nc"><i>318</i>&nbsp;        room.setMonsters(monsters);</b>
+<i>319</i>&nbsp;
+<b class="nc"><i>320</i>&nbsp;        return room;</b>
+<i>321</i>&nbsp;    }
+<i>322</i>&nbsp;
+<i>323</i>&nbsp;    public Room generateRoom15(int id, int width, int height, Position position) // Sword Room
+<i>324</i>&nbsp;    {
+<b class="nc"><i>325</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>326</i>&nbsp;
+<b class="nc"><i>327</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>328</i>&nbsp;        doors.add(new Door(new Position(40,26), new Position(38,26) ,id,4,false));</b>
+<i>329</i>&nbsp;
+<b class="nc"><i>330</i>&nbsp;        room.setDoors(doors);</b>
+<i>331</i>&nbsp;
+<b class="nc"><i>332</i>&nbsp;        List&lt;Item&gt; items = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>333</i>&nbsp;        items.add(new Sword(new Position(55,26)));</b>
+<b class="nc"><i>334</i>&nbsp;        room.setItems(items);</b>
+<i>335</i>&nbsp;
+<b class="nc"><i>336</i>&nbsp;        return room;</b>
+<i>337</i>&nbsp;    }
+<i>338</i>&nbsp;
+<i>339</i>&nbsp;    public Room generateRoom16(int id, int width, int height, Position position) // Stairs
+<i>340</i>&nbsp;    {
+<b class="nc"><i>341</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>342</i>&nbsp;
+<b class="nc"><i>343</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>344</i>&nbsp;        doors.add(new Door(new Position(40,7), new Position(38,7) ,id,1,false));</b>
+<b class="nc"><i>345</i>&nbsp;        room.setDoors(doors);</b>
+<i>346</i>&nbsp;
+<i>347</i>&nbsp;
+<b class="nc"><i>348</i>&nbsp;        List&lt;Stair&gt; stairs = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>349</i>&nbsp;        Stair stair = new Stair(new Position(50,7), 1,2);</b>
+<b class="nc"><i>350</i>&nbsp;        stairs.add(stair);</b>
+<b class="nc"><i>351</i>&nbsp;        room.setStairs(stairs);</b>
+<i>352</i>&nbsp;
+<b class="nc"><i>353</i>&nbsp;        return room;</b>
+<i>354</i>&nbsp;    }
+<i>355</i>&nbsp;
+<i>356</i>&nbsp;    public Room generateRoom17(int id, int width, int height, Position position) // Monster
+<i>357</i>&nbsp;    {
+<b class="nc"><i>358</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>359</i>&nbsp;
+<b class="nc"><i>360</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>361</i>&nbsp;        doors.add(new Door(new Position(30,18), new Position(28,18) ,id,2,false));</b>
+<b class="nc"><i>362</i>&nbsp;        doors.add(new Door(new Position(39,18), new Position(41,18) ,id,8,false));</b>
+<i>363</i>&nbsp;
+<b class="nc"><i>364</i>&nbsp;        List&lt;Monster&gt; monsters = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>365</i>&nbsp;        monsters.add(new Monster(new Position(35,18)));</b>
+<i>366</i>&nbsp;
+<i>367</i>&nbsp;
+<b class="nc"><i>368</i>&nbsp;        room.setDoors(doors);</b>
+<b class="nc"><i>369</i>&nbsp;        room.setMonsters(monsters);</b>
+<i>370</i>&nbsp;
+<b class="nc"><i>371</i>&nbsp;        return room;</b>
+<i>372</i>&nbsp;    }
+<i>373</i>&nbsp;
+<i>374</i>&nbsp;    public Room generateRoom18(int id, int width, int height, Position position) // Ester Egg
+<i>375</i>&nbsp;    {
+<b class="nc"><i>376</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>377</i>&nbsp;
+<b class="nc"><i>378</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>379</i>&nbsp;        doors.add(new Door(new Position(40,18), new Position(38,18) ,id,7,false));</b>
+<i>380</i>&nbsp;
+<i>381</i>&nbsp;
+<i>382</i>&nbsp;
+<b class="nc"><i>383</i>&nbsp;        room.setDoors(doors);</b>
+<b class="nc"><i>384</i>&nbsp;        return room;</b>
+<i>385</i>&nbsp;    }
+<i>386</i>&nbsp;
+<i>387</i>&nbsp;
+<i>388</i>&nbsp;//----------------------------------------------------------------------------------------------------------------------
+<i>389</i>&nbsp;
+<i>390</i>&nbsp;    public Room generateRoom20(int id, int width, int height, Position position)  // Stairs
+<i>391</i>&nbsp;    {
+<b class="nc"><i>392</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>393</i>&nbsp;
+<b class="nc"><i>394</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>395</i>&nbsp;        doors.add(new Door(new Position(40,7), new Position(38,7) ,id,1, false));</b>
+<b class="nc"><i>396</i>&nbsp;        room.setDoors(doors);</b>
+<i>397</i>&nbsp;
+<i>398</i>&nbsp;
+<b class="nc"><i>399</i>&nbsp;        List&lt;Stair&gt; stairs = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>400</i>&nbsp;        Stair stair = new Stair(new Position(50,7), 2,1);</b>
+<b class="nc"><i>401</i>&nbsp;        stairs.add(stair);</b>
+<b class="nc"><i>402</i>&nbsp;        room.setStairs(stairs);</b>
+<i>403</i>&nbsp;
+<b class="nc"><i>404</i>&nbsp;        room.setVisible(true);</b>
+<b class="nc"><i>405</i>&nbsp;        return room;</b>
+<i>406</i>&nbsp;    }
+<i>407</i>&nbsp;
+<i>408</i>&nbsp;    public Room generateRoom21(int id, int width, int height, Position position)
+<i>409</i>&nbsp;    {
+<b class="nc"><i>410</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>411</i>&nbsp;
+<b class="nc"><i>412</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>413</i>&nbsp;        doors.add(new Door(new Position(39,7), new Position(41,7) ,id,0, false));</b>
+<b class="nc"><i>414</i>&nbsp;        doors.add(new Door(new Position(5,12), new Position(5,14) ,id,2, false));</b>
+<b class="nc"><i>415</i>&nbsp;        room.setDoors(doors);</b>
+<i>416</i>&nbsp;
+<i>417</i>&nbsp;
+<b class="nc"><i>418</i>&nbsp;        List&lt;Monster&gt; monsters = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>419</i>&nbsp;        monsters.add(new Monster(new Position(20,7)));</b>
+<b class="nc"><i>420</i>&nbsp;        monsters.add(new Monster(new Position(5,3)));</b>
+<b class="nc"><i>421</i>&nbsp;        monsters.add(new Monster(new Position(35,3)));</b>
+<b class="nc"><i>422</i>&nbsp;        monsters.add(new Monster(new Position(5,10)));</b>
+<b class="nc"><i>423</i>&nbsp;        monsters.add(new Monster(new Position(35,10)));</b>
+<b class="nc"><i>424</i>&nbsp;        room.setMonsters(monsters);</b>
+<i>425</i>&nbsp;
+<b class="nc"><i>426</i>&nbsp;        return room;</b>
+<i>427</i>&nbsp;    }
+<i>428</i>&nbsp;
+<i>429</i>&nbsp;    public Room generateRoom22(int id, int width, int height, Position position)
+<i>430</i>&nbsp;    {
+<b class="nc"><i>431</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>432</i>&nbsp;
+<b class="nc"><i>433</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>434</i>&nbsp;        doors.add(new Door(new Position(5,13), new Position(5,11) ,id,1, false));</b>
+<b class="nc"><i>435</i>&nbsp;        doors.add(new Door(new Position(35,19), new Position(35,21) ,id,3, false));</b>
+<b class="nc"><i>436</i>&nbsp;        room.setDoors(doors);</b>
+<i>437</i>&nbsp;
+<b class="nc"><i>438</i>&nbsp;        Monster monster = new Monster(new Position(20,16));</b>
+<b class="nc"><i>439</i>&nbsp;        room.addMonster(monster);</b>
+<i>440</i>&nbsp;
+<i>441</i>&nbsp;
+<b class="nc"><i>442</i>&nbsp;        return room;</b>
+<i>443</i>&nbsp;    }
+<i>444</i>&nbsp;
+<i>445</i>&nbsp;    public Room generateRoom23(int id, int width, int height, Position position)
+<i>446</i>&nbsp;    {
+<b class="nc"><i>447</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>448</i>&nbsp;
+<i>449</i>&nbsp;
+<b class="nc"><i>450</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>451</i>&nbsp;        doors.add(new Door(new Position(35,20), new Position(35,18) ,id,2, false));</b>
+<b class="nc"><i>452</i>&nbsp;        doors.add(new Door(new Position(5,24), new Position(5,26) ,id,4, false));</b>
+<b class="nc"><i>453</i>&nbsp;        room.setDoors(doors);</b>
+<i>454</i>&nbsp;
+<i>455</i>&nbsp;
+<b class="nc"><i>456</i>&nbsp;        Monster monster = new Monster(new Position(20,22));</b>
+<b class="nc"><i>457</i>&nbsp;        room.addMonster(monster);</b>
+<i>458</i>&nbsp;
+<b class="nc"><i>459</i>&nbsp;        return room;</b>
+<i>460</i>&nbsp;    }
+<i>461</i>&nbsp;
+<i>462</i>&nbsp;    public Room generateRoom24(int id, int width, int height, Position position)
+<i>463</i>&nbsp;    {
+<b class="nc"><i>464</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>465</i>&nbsp;
+<i>466</i>&nbsp;
+<b class="nc"><i>467</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>468</i>&nbsp;        doors.add(new Door(new Position(5,25), new Position(5,23) ,id,3, false));</b>
+<b class="nc"><i>469</i>&nbsp;        room.setDoors(doors);</b>
+<i>470</i>&nbsp;
+<b class="nc"><i>471</i>&nbsp;        List&lt;Stair&gt; stairs = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>472</i>&nbsp;        Stair stair = new Stair(new Position(30,27), 2,3);</b>
+<b class="nc"><i>473</i>&nbsp;        stairs.add(stair);</b>
+<b class="nc"><i>474</i>&nbsp;        room.setStairs(stairs);</b>
+<i>475</i>&nbsp;
+<b class="nc"><i>476</i>&nbsp;        return room;</b>
+<i>477</i>&nbsp;    }
+<i>478</i>&nbsp;
+<i>479</i>&nbsp;    public Room generateRoom25(int id, int width, int height, Position position)
+<i>480</i>&nbsp;    {
+<b class="nc"><i>481</i>&nbsp;        return new Room(id,width, height, position);</b>
+<i>482</i>&nbsp;    }
+<i>483</i>&nbsp;//----------------------------------------------------------------------------------------------------------------------
+<i>484</i>&nbsp;
+<i>485</i>&nbsp;
+<i>486</i>&nbsp;    public Room generateRoom30(int id, int width, int height, Position position)  // Stairs
+<i>487</i>&nbsp;    {
+<b class="nc"><i>488</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<b class="nc"><i>489</i>&nbsp;        room.setVisible(true);</b>
+<i>490</i>&nbsp;
+<i>491</i>&nbsp;
+<b class="nc"><i>492</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>493</i>&nbsp;        doors.add(new Door(new Position(20,27), new Position(18,27) ,id,1, false));</b>
+<b class="nc"><i>494</i>&nbsp;        doors.add(new Door(new Position(39,27), new Position(41,27) ,id,6, false));</b>
+<b class="nc"><i>495</i>&nbsp;        room.setDoors(doors);</b>
+<i>496</i>&nbsp;
+<b class="nc"><i>497</i>&nbsp;        List&lt;Stair&gt; stairs = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>498</i>&nbsp;        Stair stair = new Stair(new Position(30,27), 3,2);</b>
+<b class="nc"><i>499</i>&nbsp;        stairs.add(stair);</b>
+<b class="nc"><i>500</i>&nbsp;        room.setStairs(stairs);</b>
+<i>501</i>&nbsp;
+<b class="nc"><i>502</i>&nbsp;        room.setVisible(true);</b>
+<b class="nc"><i>503</i>&nbsp;        return room;</b>
+<i>504</i>&nbsp;    }
+<i>505</i>&nbsp;
+<i>506</i>&nbsp;    public Room generateRoom31(int id, int width, int height, Position position)  // Canto inferior esquerdo
+<i>507</i>&nbsp;    {
+<b class="nc"><i>508</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>509</i>&nbsp;
+<i>510</i>&nbsp;
+<b class="nc"><i>511</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>512</i>&nbsp;        doors.add(new Door(new Position(19,27), new Position(21,27) ,id,0, false));</b>
+<b class="nc"><i>513</i>&nbsp;        doors.add(new Door(new Position(10,20), new Position(10,18) ,id,2, false));</b>
+<b class="nc"><i>514</i>&nbsp;        room.setDoors(doors);</b>
+<i>515</i>&nbsp;
+<i>516</i>&nbsp;
+<b class="nc"><i>517</i>&nbsp;        Monster monster = new Monster(new Position(10,25));</b>
+<b class="nc"><i>518</i>&nbsp;        room.addMonster(monster);</b>
+<i>519</i>&nbsp;
+<i>520</i>&nbsp;
+<i>521</i>&nbsp;
+<b class="nc"><i>522</i>&nbsp;        return room;</b>
+<i>523</i>&nbsp;    }
+<i>524</i>&nbsp;
+<i>525</i>&nbsp;    public Room generateRoom32(int id, int width, int height, Position position)  // Canto superior esquerdo
+<i>526</i>&nbsp;    {
+<b class="nc"><i>527</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>528</i>&nbsp;
+<i>529</i>&nbsp;
+<b class="nc"><i>530</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>531</i>&nbsp;        doors.add(new Door(new Position(10,19), new Position(10,21) ,id,1, false));</b>
+<b class="nc"><i>532</i>&nbsp;        doors.add(new Door(new Position(19,3), new Position(21,3) ,id,3, false));</b>
+<b class="nc"><i>533</i>&nbsp;        room.setDoors(doors);</b>
+<i>534</i>&nbsp;
+<i>535</i>&nbsp;
+<b class="nc"><i>536</i>&nbsp;        List&lt;Monster&gt; monsters = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>537</i>&nbsp;        monsters.add(new Monster(new Position(10,10)));</b>
+<b class="nc"><i>538</i>&nbsp;        monsters.add(new Monster(new Position(10,17)));</b>
+<b class="nc"><i>539</i>&nbsp;        monsters.add(new Monster(new Position(17,3)));</b>
+<b class="nc"><i>540</i>&nbsp;        room.setMonsters(monsters);</b>
+<i>541</i>&nbsp;
+<b class="nc"><i>542</i>&nbsp;        return room;</b>
+<i>543</i>&nbsp;    }
+<i>544</i>&nbsp;
+<i>545</i>&nbsp;    public Room generateRoom33(int id, int width, int height, Position position)  // Topo central
+<i>546</i>&nbsp;    {
+<b class="nc"><i>547</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>548</i>&nbsp;
+<i>549</i>&nbsp;
+<b class="nc"><i>550</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>551</i>&nbsp;        doors.add(new Door(new Position(20,3), new Position(18,3) ,id,2, false));</b>
+<b class="nc"><i>552</i>&nbsp;        doors.add(new Door(new Position(30,6), new Position(30,8) ,id,4, false));</b>
+<b class="nc"><i>553</i>&nbsp;        doors.add(new Door(new Position(39,3), new Position(41,3) ,id,5, false));</b>
+<b class="nc"><i>554</i>&nbsp;        room.setDoors(doors);</b>
+<i>555</i>&nbsp;
+<i>556</i>&nbsp;
+<b class="nc"><i>557</i>&nbsp;        return room;</b>
+<i>558</i>&nbsp;    }
+<i>559</i>&nbsp;
+<i>560</i>&nbsp;    public Room generateRoom34(int id, int width, int height, Position position)  // Stairs
+<i>561</i>&nbsp;    {
+<b class="nc"><i>562</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>563</i>&nbsp;
+<i>564</i>&nbsp;
+<b class="nc"><i>565</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>566</i>&nbsp;        doors.add(new Door(new Position(30,7), new Position(30,5) ,id,3, false));</b>
+<b class="nc"><i>567</i>&nbsp;        room.setDoors(doors);</b>
+<i>568</i>&nbsp;
+<i>569</i>&nbsp;
+<b class="nc"><i>570</i>&nbsp;        List&lt;Stair&gt; stairs = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>571</i>&nbsp;        Stair stair = new Stair(new Position(30,15), 3,4);</b>
+<b class="nc"><i>572</i>&nbsp;        stairs.add(stair);</b>
+<b class="nc"><i>573</i>&nbsp;        room.setStairs(stairs);</b>
+<i>574</i>&nbsp;
+<i>575</i>&nbsp;
+<b class="nc"><i>576</i>&nbsp;        return room;</b>
+<i>577</i>&nbsp;    }
+<i>578</i>&nbsp;
+<i>579</i>&nbsp;    public Room generateRoom35(int id, int width, int height, Position position)  // Canto superior direito
+<i>580</i>&nbsp;    {
+<b class="nc"><i>581</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>582</i>&nbsp;
+<i>583</i>&nbsp;
+<b class="nc"><i>584</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>585</i>&nbsp;        doors.add(new Door(new Position(50,19), new Position(50,21) ,id,6, false));</b>
+<b class="nc"><i>586</i>&nbsp;        doors.add(new Door(new Position(40,3), new Position(38,3) ,id,3, false));</b>
+<b class="nc"><i>587</i>&nbsp;        room.setDoors(doors);</b>
+<i>588</i>&nbsp;
+<b class="nc"><i>589</i>&nbsp;        List&lt;Monster&gt; monsters = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>590</i>&nbsp;        monsters.add(new Monster(new Position(50,10)));</b>
+<b class="nc"><i>591</i>&nbsp;        monsters.add(new Monster(new Position(50,17)));</b>
+<b class="nc"><i>592</i>&nbsp;        monsters.add(new Monster(new Position(42,3)));</b>
+<b class="nc"><i>593</i>&nbsp;        room.setMonsters(monsters);</b>
+<i>594</i>&nbsp;
+<i>595</i>&nbsp;
+<b class="nc"><i>596</i>&nbsp;        return room;</b>
+<i>597</i>&nbsp;    }
+<i>598</i>&nbsp;
+<i>599</i>&nbsp;    public Room generateRoom36(int id, int width, int height, Position position)  // Canto inferior direito
+<i>600</i>&nbsp;    {
+<b class="nc"><i>601</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>602</i>&nbsp;
+<i>603</i>&nbsp;
+<b class="nc"><i>604</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>605</i>&nbsp;        doors.add(new Door(new Position(40,27), new Position(38,27) ,id,0, false));</b>
+<b class="nc"><i>606</i>&nbsp;        doors.add(new Door(new Position(50,20), new Position(50,18) ,id,5, false));</b>
+<b class="nc"><i>607</i>&nbsp;        room.setDoors(doors);</b>
+<i>608</i>&nbsp;
+<i>609</i>&nbsp;
+<b class="nc"><i>610</i>&nbsp;        Monster monster = new Monster(new Position(50,25));</b>
+<b class="nc"><i>611</i>&nbsp;        room.addMonster(monster);</b>
+<i>612</i>&nbsp;
+<b class="nc"><i>613</i>&nbsp;        return room;</b>
+<i>614</i>&nbsp;    }
+<i>615</i>&nbsp;
+<i>616</i>&nbsp;
+<i>617</i>&nbsp;//----------------------------------------------------------------------------------------------------------------------
+<i>618</i>&nbsp;
+<i>619</i>&nbsp;    public Room generateRoom40(int id, int width, int height, Position position)  // Stairs
+<i>620</i>&nbsp;    {
+<b class="nc"><i>621</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>622</i>&nbsp;
+<i>623</i>&nbsp;
+<b class="nc"><i>624</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>625</i>&nbsp;        doors.add(new Door(new Position(30,10), new Position(30,9) ,id,1, false));</b>
+<b class="nc"><i>626</i>&nbsp;        room.setDoors(doors);</b>
+<i>627</i>&nbsp;
+<i>628</i>&nbsp;
+<b class="nc"><i>629</i>&nbsp;        List&lt;Stair&gt; stairs = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>630</i>&nbsp;        Stair stair = new Stair(new Position(30,15), 4,3);</b>
+<b class="nc"><i>631</i>&nbsp;        stairs.add(stair);</b>
+<b class="nc"><i>632</i>&nbsp;        room.setStairs(stairs);</b>
+<i>633</i>&nbsp;
+<i>634</i>&nbsp;
+<b class="nc"><i>635</i>&nbsp;        room.setVisible(true);</b>
+<b class="nc"><i>636</i>&nbsp;        return room;</b>
+<i>637</i>&nbsp;    }
+<i>638</i>&nbsp;
+<i>639</i>&nbsp;    public Room generateRoom41(int id, int width, int height, Position position,Door finalDoor)  // Last floor
+<i>640</i>&nbsp;    {
+<b class="nc"><i>641</i>&nbsp;        Room room = new Room(id,width, height, position);</b>
+<i>642</i>&nbsp;
+<i>643</i>&nbsp;
+<b class="nc"><i>644</i>&nbsp;        List&lt;Item&gt; items = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>645</i>&nbsp;        items.add(new Key(new Position(30,25), finalDoor));</b>
+<b class="nc"><i>646</i>&nbsp;        room.setItems(items);</b>
+<i>647</i>&nbsp;
+<i>648</i>&nbsp;
+<i>649</i>&nbsp;        //Wall
+<b class="nc"><i>650</i>&nbsp;        List&lt;Wall&gt; walls = room.generateWalls(20,10, new Position(20,10));</b>
+<b class="nc"><i>651</i>&nbsp;        room.addWalls(walls);</b>
+<i>652</i>&nbsp;
+<b class="nc"><i>653</i>&nbsp;        List&lt;Door&gt; doors = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>654</i>&nbsp;        doors.add(new Door(new Position(30,10), new Position(30,11) ,id,0, false));</b>
+<b class="nc"><i>655</i>&nbsp;        room.setDoors(doors);</b>
+<i>656</i>&nbsp;
+<i>657</i>&nbsp;
+<b class="nc"><i>658</i>&nbsp;        return room;</b>
+<i>659</i>&nbsp;    }
+<i>660</i>&nbsp;
+<i>661</i>&nbsp;
+<i>662</i>&nbsp;
+<i>663</i>&nbsp;//----------------------------------------------------------------------------------------------------------------------
+<i>664</i>&nbsp;
+<i>665</i>&nbsp;
+<i>666</i>&nbsp;
+<i>667</i>&nbsp;
+<i>668</i>&nbsp;
+<i>669</i>&nbsp;
+<i>670</i>&nbsp;//----------------------------------------------------------------------------------------------------------------------
+<i>671</i>&nbsp;
+<i>672</i>&nbsp;
+<i>673</i>&nbsp;    public boolean floorHaveSpace(Floor floor)
+<i>674</i>&nbsp;    {
+<b class="nc"><i>675</i>&nbsp;        int widthTemp = 0;</b>
+<b class="nc"><i>676</i>&nbsp;        int heightTemp = 0;</b>
+<i>677</i>&nbsp;
+<b class="nc"><i>678</i>&nbsp;        List&lt;Room&gt; rooms = floor.getRooms();</b>
+<b class="nc"><i>679</i>&nbsp;        for (Room room : rooms)</b>
+<i>680</i>&nbsp;        {
+<b class="nc"><i>681</i>&nbsp;            widthTemp += room.getWidth();</b>
+<b class="nc"><i>682</i>&nbsp;            heightTemp += room.getHeight();</b>
+<b class="nc"><i>683</i>&nbsp;        }</b>
+<i>684</i>&nbsp;
+<b class="nc"><i>685</i>&nbsp;        return (widthTemp &lt;= floor.getWidth() &amp;&amp; heightTemp &lt;= floor.getHeight());</b>
+<i>686</i>&nbsp;
+<i>687</i>&nbsp;    }
+<i>688</i>&nbsp;
+<i>689</i>&nbsp;    public void generateMenus(List&lt;Menu&gt; menus){
+<b class="nc"><i>690</i>&nbsp;        menus.add(generateMainMenu());</b>
+<b class="nc"><i>691</i>&nbsp;        menus.add(generateCreditMenu());</b>
+<b class="nc"><i>692</i>&nbsp;        menus.add(generateWonMenu());</b>
+<b class="nc"><i>693</i>&nbsp;        menus.add(generateGameOver());</b>
+<b class="nc"><i>694</i>&nbsp;    }</b>
+<i>695</i>&nbsp;
+<i>696</i>&nbsp;    private Menu generateWonMenu() {
+<b class="nc"><i>697</i>&nbsp;        List&lt;Button&gt; buttons = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>698</i>&nbsp;        List&lt;TextBox&gt; textBoxes = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>699</i>&nbsp;        textBoxes.add(new TextBox(new Position(25,15),&quot;You Won!!!&quot;));</b>
+<i>700</i>&nbsp;
+<b class="nc"><i>701</i>&nbsp;        return new Menu(buttons,textBoxes);</b>
+<i>702</i>&nbsp;    }
+<i>703</i>&nbsp;
+<i>704</i>&nbsp;    private Menu generateGameOver() {
+<b class="nc"><i>705</i>&nbsp;        List&lt;Button&gt; buttons = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>706</i>&nbsp;        List&lt;TextBox&gt; textBoxes = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>707</i>&nbsp;        textBoxes.add(new TextBox(new Position(25,15),&quot;GAME OVER&quot;));</b>
+<i>708</i>&nbsp;
+<b class="nc"><i>709</i>&nbsp;        return new Menu(buttons,textBoxes);</b>
+<i>710</i>&nbsp;    }
+<i>711</i>&nbsp;
+<i>712</i>&nbsp;    private Menu generateCreditMenu() {
+<b class="nc"><i>713</i>&nbsp;        List&lt;Button&gt; buttons = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>714</i>&nbsp;        List&lt;TextBox&gt; textBoxes = new ArrayList&lt;&gt;();</b>
+<i>715</i>&nbsp;
+<b class="nc"><i>716</i>&nbsp;        textBoxes.add(new TextBox(new Position(15,10),&quot;Developed by:&quot;));</b>
+<b class="nc"><i>717</i>&nbsp;        textBoxes.add(new TextBox(new Position(20,14),&quot;Ricardo Amaral Nunes&quot;));</b>
+<b class="nc"><i>718</i>&nbsp;        textBoxes.add(new TextBox(new Position(20,16),&quot;Jose Antonio Dantas Macedo&quot;));</b>
+<i>719</i>&nbsp;
+<b class="nc"><i>720</i>&nbsp;        buttons.add(new Button(new Position(50,25),&quot;Main Menu&quot;, 0));</b>
+<b class="nc"><i>721</i>&nbsp;        buttons.get(0).setSelect(true);</b>
+<i>722</i>&nbsp;
+<b class="nc"><i>723</i>&nbsp;        return new Menu(buttons,textBoxes);</b>
+<i>724</i>&nbsp;    }
+<i>725</i>&nbsp;
+<i>726</i>&nbsp;    private Menu generateMainMenu(){
+<b class="nc"><i>727</i>&nbsp;        List&lt;Button&gt; buttons = new ArrayList&lt;&gt;();</b>
+<b class="nc"><i>728</i>&nbsp;        List&lt;TextBox&gt; textBoxes = new ArrayList&lt;&gt;();</b>
+<i>729</i>&nbsp;
+<b class="nc"><i>730</i>&nbsp;        buttons.add(new Button(new Position(27,15),&quot;Play&quot;, -1));</b>
+<b class="nc"><i>731</i>&nbsp;        buttons.get(0).setSelect(true);</b>
+<b class="nc"><i>732</i>&nbsp;        buttons.add(new Button(new Position(27,20),&quot;Credits&quot;, 1));</b>
+<i>733</i>&nbsp;
+<b class="nc"><i>734</i>&nbsp;        textBoxes.add(new TextBox(new Position(22,10),&quot;Escape the House!&quot;));</b>
+<i>735</i>&nbsp;
+<b class="nc"><i>736</i>&nbsp;        return new Menu(buttons, textBoxes);</b>
+<i>737</i>&nbsp;
+<i>738</i>&nbsp;    }
+<i>739</i>&nbsp;
+<i>740</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 22:35</div>
+</div>
+</body>
+</html>

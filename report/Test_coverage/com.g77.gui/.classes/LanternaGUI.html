@@ -1,0 +1,264 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: LanternaGUI</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">com.g77.gui</a> ]
+</div>
+
+<h1>Coverage Summary for Class: LanternaGUI (com.g77.gui)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">LanternaGUI</td>
+<td class="coverageStat">
+  <span class="percent">
+    77,8%
+  </span>
+  <span class="absValue">
+    (7/ 9)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    61,9%
+  </span>
+  <span class="absValue">
+    (39/ 63)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">LanternaGUI$1</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+  </tr>
+  <tr>
+    <td class="name">LanternaGUI$MockitoMock$355439909</td>
+  </tr>
+  <tr>
+    <td class="name">LanternaGUI$MockitoMock$355439909$auxiliary$75YckACG</td>
+  </tr>
+  <tr>
+    <td class="name">LanternaGUI$MockitoMock$355439909$auxiliary$dnaqZgZy</td>
+  </tr>
+  <tr>
+    <td class="name">LanternaGUI$MockitoMock$355439909$auxiliary$HVc9iNnH</td>
+  </tr>
+  <tr>
+    <td class="name">LanternaGUI$MockitoMock$355439909$auxiliary$JpbcAl4y</td>
+  </tr>
+  <tr>
+    <td class="name">LanternaGUI$MockitoMock$355439909$auxiliary$K2f71Pev</td>
+  </tr>
+  <tr>
+    <td class="name">LanternaGUI$MockitoMock$355439909$auxiliary$x9swnJyL</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    80%
+  </span>
+  <span class="absValue">
+    (8/ 10)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    62,5%
+  </span>
+  <span class="absValue">
+    (40/ 64)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package com.g77.gui;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import com.g77.data.GameModel;
+<i>4</i>&nbsp;import com.g77.data.state.MenuState;
+<i>5</i>&nbsp;import com.googlecode.lanterna.input.KeyStroke;
+<i>6</i>&nbsp;import com.googlecode.lanterna.TerminalSize;
+<i>7</i>&nbsp;import com.googlecode.lanterna.screen.TerminalScreen;
+<i>8</i>&nbsp;import com.googlecode.lanterna.terminal.DefaultTerminalFactory;
+<i>9</i>&nbsp;import com.googlecode.lanterna.terminal.Terminal;
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;import java.io.IOException;
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;public class LanternaGUI implements GUI{
+<i>14</i>&nbsp;
+<i>15</i>&nbsp;    private TerminalScreen screen;
+<i>16</i>&nbsp;
+<i>17</i>&nbsp;    private FloorView floorView;
+<i>18</i>&nbsp;    private ItemView itemView;
+<i>19</i>&nbsp;    private TimerView timerView;
+<i>20</i>&nbsp;    private MenuView menuView;
+<i>21</i>&nbsp;
+<b class="nc"><i>22</i>&nbsp;    public LanternaGUI(int width, int height) throws IOException {</b>
+<b class="nc"><i>23</i>&nbsp;        TerminalSize terminalSize = new TerminalSize(width, height);</b>
+<b class="nc"><i>24</i>&nbsp;        DefaultTerminalFactory terminalFactory = new DefaultTerminalFactory().setInitialTerminalSize(terminalSize);</b>
+<i>25</i>&nbsp;
+<b class="nc"><i>26</i>&nbsp;        Terminal terminal = terminalFactory.createTerminal();</b>
+<b class="nc"><i>27</i>&nbsp;        this.screen =  new TerminalScreen(terminal);</b>
+<i>28</i>&nbsp;
+<b class="nc"><i>29</i>&nbsp;        screen.setCursorPosition(null);   // we don&#39;t need a cursor</b>
+<b class="nc"><i>30</i>&nbsp;        screen.startScreen();             // screens must be started</b>
+<b class="nc"><i>31</i>&nbsp;        screen.doResizeIfNecessary();     // resize screen if necessary</b>
+<i>32</i>&nbsp;
+<b class="nc"><i>33</i>&nbsp;        this.floorView = new FloorView();</b>
+<b class="nc"><i>34</i>&nbsp;        this.itemView = new ItemView();</b>
+<b class="nc"><i>35</i>&nbsp;        this.timerView = new TimerView();</b>
+<b class="nc"><i>36</i>&nbsp;        this.menuView = new MenuView();</b>
+<b class="nc"><i>37</i>&nbsp;    }</b>
+<i>38</i>&nbsp;
+<b class="nc"><i>39</i>&nbsp;    public LanternaGUI(FloorView floorView, ItemView itemView, TimerView timerView, MenuView menuView) {</b>
+<b class="nc"><i>40</i>&nbsp;        this.floorView = floorView;</b>
+<b class="nc"><i>41</i>&nbsp;        this.itemView = itemView;</b>
+<b class="nc"><i>42</i>&nbsp;        this.timerView = timerView;</b>
+<b class="nc"><i>43</i>&nbsp;        this.menuView = menuView;</b>
+<b class="nc"><i>44</i>&nbsp;    }</b>
+<i>45</i>&nbsp;
+<b class="fc"><i>46</i>&nbsp;    public LanternaGUI(TerminalScreen screen) throws IOException{</b>
+<b class="fc"><i>47</i>&nbsp;        this.screen = screen;</b>
+<i>48</i>&nbsp;
+<b class="fc"><i>49</i>&nbsp;        this.screen.setCursorPosition(null);   // we don&#39;t need a cursor</b>
+<b class="fc"><i>50</i>&nbsp;        this.screen.startScreen();             // screens must be started</b>
+<b class="fc"><i>51</i>&nbsp;        this.screen.doResizeIfNecessary();     // resize screen if necessary</b>
+<b class="fc"><i>52</i>&nbsp;        this.floorView = new FloorView();</b>
+<b class="fc"><i>53</i>&nbsp;        this.itemView = new ItemView();</b>
+<b class="fc"><i>54</i>&nbsp;        this.timerView = new TimerView();</b>
+<b class="fc"><i>55</i>&nbsp;        this.menuView = new MenuView();</b>
+<b class="fc"><i>56</i>&nbsp;    }</b>
+<i>57</i>&nbsp;
+<i>58</i>&nbsp;    @Override
+<i>59</i>&nbsp;    public Move getMovement() throws IOException{
+<i>60</i>&nbsp;        while(true) {
+<b class="fc"><i>61</i>&nbsp;            KeyStroke input = screen.readInput();</b>
+<i>62</i>&nbsp;
+<b class="fc"><i>63</i>&nbsp;            switch (input.getKeyType()) {</b>
+<i>64</i>&nbsp;                case Escape:
+<b class="fc"><i>65</i>&nbsp;                    return Move.EXIT;</b>
+<i>66</i>&nbsp;                case ArrowLeft:
+<b class="fc"><i>67</i>&nbsp;                    return Move.LEFT;</b>
+<i>68</i>&nbsp;                case ArrowRight:
+<b class="fc"><i>69</i>&nbsp;                    return Move.RIGHT;</b>
+<i>70</i>&nbsp;                case ArrowUp:
+<b class="fc"><i>71</i>&nbsp;                    return Move.UP;</b>
+<i>72</i>&nbsp;                case ArrowDown:
+<b class="fc"><i>73</i>&nbsp;                    return Move.DOWN;</b>
+<i>74</i>&nbsp;                case Character:
+<b class="fc"><i>75</i>&nbsp;                    if(input.getCharacter() == &#39;a&#39;) return Move.ATTACK;</b>
+<b class="nc"><i>76</i>&nbsp;                    if(input.getCharacter() == &#39; &#39;) return Move.SPACE;</b>
+<i>77</i>&nbsp;                case Enter:
+<b class="fc"><i>78</i>&nbsp;                    return Move.ENTER;</b>
+<i>79</i>&nbsp;            }
+<b class="nc"><i>80</i>&nbsp;        }</b>
+<i>81</i>&nbsp;    }
+<i>82</i>&nbsp;
+<i>83</i>&nbsp;    @Override
+<i>84</i>&nbsp;    public void close() throws IOException {
+<b class="fc"><i>85</i>&nbsp;        screen.close();</b>
+<b class="fc"><i>86</i>&nbsp;    }</b>
+<i>87</i>&nbsp;
+<i>88</i>&nbsp;
+<i>89</i>&nbsp;
+<i>90</i>&nbsp;    @Override
+<i>91</i>&nbsp;    public void changed(GameModel subject) {
+<i>92</i>&nbsp;
+<i>93</i>&nbsp;        try {
+<b class="fc"><i>94</i>&nbsp;            draw(subject);</b>
+<b class="nc"><i>95</i>&nbsp;        }catch (IOException e){</b>
+<b class="nc"><i>96</i>&nbsp;            e.printStackTrace();</b>
+<b class="fc"><i>97</i>&nbsp;        }</b>
+<i>98</i>&nbsp;
+<b class="fc"><i>99</i>&nbsp;    }</b>
+<i>100</i>&nbsp;
+<i>101</i>&nbsp;    @Override
+<i>102</i>&nbsp;    public void draw(GameModel gameModel) throws IOException {
+<b class="fc"><i>103</i>&nbsp;        screen.clear();</b>
+<i>104</i>&nbsp;
+<b class="fc"><i>105</i>&nbsp;        if(gameModel.getCurrentState() instanceof MenuState)</b>
+<b class="fc"><i>106</i>&nbsp;            drawMenuState(gameModel);</b>
+<i>107</i>&nbsp;        else
+<b class="fc"><i>108</i>&nbsp;            drawGameplayState(gameModel);</b>
+<i>109</i>&nbsp;
+<b class="fc"><i>110</i>&nbsp;        screen.refresh();</b>
+<b class="fc"><i>111</i>&nbsp;    }</b>
+<i>112</i>&nbsp;
+<i>113</i>&nbsp;    private void drawGameplayState(GameModel gameModel) {
+<i>114</i>&nbsp;
+<b class="fc"><i>115</i>&nbsp;        if(gameModel.getFloors().isEmpty())</b>
+<b class="fc"><i>116</i>&nbsp;            return;</b>
+<i>117</i>&nbsp;
+<b class="fc"><i>118</i>&nbsp;        this.floorView.draw(this.screen, gameModel.getCurrentFloor());</b>
+<b class="fc"><i>119</i>&nbsp;        this.itemView.draw(this.screen, gameModel.getCurrentFloor().getMainCharacter());</b>
+<b class="fc"><i>120</i>&nbsp;        this.timerView.draw(this.screen, gameModel.getTimer());</b>
+<b class="fc"><i>121</i>&nbsp;    }</b>
+<i>122</i>&nbsp;
+<i>123</i>&nbsp;
+<i>124</i>&nbsp;
+<i>125</i>&nbsp;    private void drawMenuState(GameModel gameModel) {
+<b class="fc"><i>126</i>&nbsp;        if(gameModel.getMenus().isEmpty())</b>
+<b class="nc"><i>127</i>&nbsp;            return;</b>
+<i>128</i>&nbsp;
+<b class="fc"><i>129</i>&nbsp;        this.menuView.draw(this.screen, gameModel.getCurrentMenu());</b>
+<b class="fc"><i>130</i>&nbsp;    }</b>
+<i>131</i>&nbsp;
+<i>132</i>&nbsp;
+<i>133</i>&nbsp;
+<i>134</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2020-05-31 22:35</div>
+</div>
+</body>
+</html>
